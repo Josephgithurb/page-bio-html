@@ -51,16 +51,20 @@ h2 {
     margin-bottom: 1rem;
 }
 img {
-    max-width: 200px;
+    max-width: 100%;
+    height: auto;
     border-radius: 50%;
     display: block;
     margin: 1rem auto;
+}
+#apropos img {
+    max-width: 200px;
 }
 .apropos-content {
     display: flex;
     align-items: center;
     gap: 2rem;
-    flex-direction: column;
+    /* flex-direction: column; */
 }
 .apropos-content img {
     margin: 0;
@@ -84,7 +88,7 @@ img {
 }
 .galerie-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     margin-top: 1rem;
     grid-template-rows: 100px 100px;
@@ -101,9 +105,9 @@ img {
     background: #2980b9;
     cursor: pointer;
 }
-.projet1 {
+/* .projet1 {
     grid-column: span 2;
-}
+} */
 
 footer {
     background-color: #1f2a44;
@@ -114,4 +118,85 @@ footer {
 p {
     margin: 10px;
     padding: 10px;
+}
+#menucheck {
+    display: none;
+}
+.menu {
+    display: none;
+}
+
+/* ===== RESPONSIVE MOBILE ===== */
+/* Tablette et moins : 768px */
+@media screen and (max-width: 768px) {
+  
+  /* Nav en colonne */
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        
+    }
+    
+    /* Section A propos : image au dessus du texte */
+    .apropos-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    /* Grid compétences : 1 colonne au lieu de 2 */
+    .competences-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Galerie : 2 colonnes au lieu de 3 */
+    .galerie-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    main {
+        padding: 0 0.5rem;
+    }
+    
+    section {
+        padding: 1.5rem 1rem;
+    }
+    .menu {
+        display: block;
+        background: black;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        cursor: pointer;
+        margin: auto;
+        width: 100px;
+    }
+    nav ul {
+         display: none;
+    }
+    
+    #menucheck:checked + .menu + nav ul {
+        display: flex;
+    }
+
+}
+
+/* Mobile : 480px */
+@media screen and (max-width: 480px) {
+  
+  header {
+    padding: 1.5rem 1rem;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+  }
+  
+  /* Galerie : 1 colonne sur petit mobile */
+  .galerie-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .projet-item {
+    padding: 2rem 1rem;
+  }
 }
