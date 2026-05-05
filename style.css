@@ -1,3 +1,16 @@
+:root{
+    --couleur-primaire:#2c3e50;
+    --couleur-secondaire:#3498db;
+    --couleur-accent:#e74c3c;
+    --couleur-fond:#f4f4f4;
+    --couleur-texte:#333;
+    --couleur-blanc:#ffffff;
+    --ombre-legere:0 2px 8px rgba(0,0,0,0.1);
+    --rayon-bordure: 8px;
+    --transition-rapide: 0.3s ease;
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -6,13 +19,13 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: var(--couleur-texte);
     background-color: #eef3f8;
     
 }
 header {
     background-color: #1f2a44;
-    color: white;
+    color: var(--couleur-blanc);
     padding: 2rem;
     text-align: center;
 }
@@ -29,7 +42,7 @@ nav ul {
 }
 
 nav a {
-    color: white;
+    color: var(--couleur-blanc);
     text-decoration: none;
 }
 nav a:hover {
@@ -41,11 +54,12 @@ main {
     padding: 0 1rem;
 }
 section {
-    background: white;
+    background: var(--couleur-blanc);
     padding: 2rem;
     margin-bottom: 2rem;
-    border-radius: 8px;
+    border-radius: var(--rayon-bordure);
 }
+
 h2 {
     color: #00b894;
     margin-bottom: 1rem;
@@ -78,13 +92,13 @@ img {
 .competence-card {
     background: #f8f9fa;
     padding: 1.5rem;
-    border-radius: 8px;
-    border-left: 4px solid #2c3e50;
+    border-radius: var(--rayon-bordure);
+    border-left: 4px solid var(--couleur-primaire);
 }
 
 .competence-card h3 {
     margin-bottom: 1rem;
-    color: #2c3e50;
+    color: var(--couleur-primaire);
 }
 .galerie-grid {
     display: grid;
@@ -94,11 +108,11 @@ img {
     grid-template-rows: 100px 100px;
 }
 .projet-item {
-    background: #3498db;
-    color: white;
+    background: var(--couleur-secondaire);
+    color: var(--couleur-blanc);
     padding: 3rem 1rem;
     text-align: center;
-    border-radius: 8px;
+    border-radius: var(--rayon-bordure);
     font-weight: bold;
 }
 .projet-item:hover {
@@ -111,7 +125,7 @@ img {
 
 footer {
     background-color: #1f2a44;
-    color: white;
+    color: var(--couleur-blanc);
     text-align: center;
     padding: 1rem;
 }
@@ -163,7 +177,7 @@ p {
     .menu {
         display: block;
         background: black;
-        color: white;
+        color: var(--couleur-blanc);
         text-align: center;
         padding: 10px;
         cursor: pointer;
