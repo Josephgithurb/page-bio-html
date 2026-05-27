@@ -140,6 +140,16 @@ img {
     grid-column: span 2;
 } */
 
+#message-confirmation{
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 16px;
+}
+body.sombre #message-confirmation{
+    color: #4ade80; /*vert clair pour le mode sombre */
+    
+}
+
 footer {
     background-color: #1f2a44;
     color: var(--couleur-blanc);
