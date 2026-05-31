@@ -41,3 +41,30 @@ formulaire.addEventListener("submit", (event)=>{
         formulaire.reset();
     }
 });
+
+// Recupère tous les boutons et tous les projets.
+const boutonsFiltre = document.querySelectorAll(".filtre-btn");
+const projets = document.querySelectorAll(".projet");
+
+//Pour chaque bouton 
+boutonsFiltre.forEach(bouton =>{
+    bouton.addEventListener("click", function(){
+        //1. Enlever la classe actif de tous les boutons
+        boutonsFiltre.forEach(btn => btn.classList.remove("actif"));
+        //2. Ajouter la classe actif au bouton cliqué
+        this.classList.add("actif");
+        
+        //3. Recuperer le filtre choisi
+        const filtre = this.getAttribute("data-filtre");
+
+        //4. Faire une boucle sur tous les projet
+        projets.forEach(projet => {
+            //Faire une condition pour voir si le filtre correspond à la categorie de projet
+            if(filtre === "tous" || projet.getAttribute("data-categorie")=== filtre){
+                projet.classList.remove("cache");
+            }else{
+                projet.classList.add("cache");
+            } 
+        })
+    })
+})
