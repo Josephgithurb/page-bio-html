@@ -68,3 +68,23 @@ boutonsFiltre.forEach(bouton =>{
         })
     })
 })
+
+// Animation fade-in au scroll
+const observerOptions = {
+    threshold: 0.2, // 20% de l'élément visible = animation
+    rootMargin: '0px 0px -50px 0px' // déclenche un peu avant
+};
+
+const observer = new IntersectionObserver((entries)=> {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);  // anime qu'une seule fois
+        }
+    });
+}, observerOptions);
+
+// Observer tous les projets
+document.querySelectorAll('.projet-item, .projet').forEach(el =>{
+    observer.observe(el);
+}); 
